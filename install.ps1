@@ -17,8 +17,8 @@ function InstallPackages(){
     Exec{pip install scipy-1.0.0b1-cp35-cp35m-win_amd64.whl}
     Exec{pip install matplotlib scikit-learn sklearn pandas cython}
     Exec{pip install statsmodels-0.8.0-cp35-cp35m-win_amd64.whl}
-    Exec{pip install patsy}
-
+    Exec{pip install patsy boto3}
+    
     Pause
 }
 
