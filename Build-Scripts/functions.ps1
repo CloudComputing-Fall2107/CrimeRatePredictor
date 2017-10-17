@@ -1,8 +1,8 @@
 Import-Module "C:\Program Files (x86)\AWS Tools\PowerShell\AWSPowerShell\AWSPowerShell.psd1"
 
 $global:basePath = Resolve-Path ..\
-$global:accessKey = "AKIAJRIDH2KRTGFDI7GQ"
-$global:secretKey = "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"
+$global:accessKey = "AKIAIF2QZ2ATL3Y5NP4Q"
+$global:secretKey = "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"
 $global:region = "us-east-2"
 $global:bucketName = "exchange.rate.predictor.model"
 $global:filename = "model.sav"
