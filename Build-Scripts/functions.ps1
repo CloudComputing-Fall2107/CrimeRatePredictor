@@ -1,8 +1,8 @@
 Import-Module "C:\Program Files (x86)\AWS Tools\PowerShell\AWSPowerShell\AWSPowerShell.psd1"
 
 $global:basePath = Resolve-Path ..\
-$global:accessKey = "AKIAJRIDH2KRTGFDI7GQ"
-$global:secretKey = "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"
+$global:accessKey = "*"
+$global:secretKey = "*"
 $global:region = "us-east-2"
 $global:bucketName = "exchange.rate.predictor.model"
 $global:filename = "model.sav"
@@ -14,6 +14,11 @@ function training () {
     Write-S3Object -BucketName $bucketName -File $filename
     Pop-Location
 }
+function testing(){
+    Push-Location $global:basePath\ExchangeRate-TestData
+    python TestData.py
+    Pop-Location
+}
 function terraform_run () {
     Push-Location $global:basePath\ExchangeRate-AWSBuild\AWSBuild
     terraform init 
@@ -23,5 +28,6 @@ function terraform_run () {
 }
 
 
-terraform_run
-training
+# terraform_run
+# training
+testing
