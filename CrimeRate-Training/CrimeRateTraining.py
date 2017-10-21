@@ -2,6 +2,7 @@ import numpy as np
 from sklearn import linear_model
 import csv
 import datetime as dt
+import pickle
 
 with open('Datasets/Exchangerate.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
@@ -29,6 +30,9 @@ model = linear_model.LinearRegression()
 x = np.reshape(date_ordinal, (len(date_ordinal), 1))
 y = np.reshape(rates, (len(rates), 1))
 model.fit(x, y)
+filename = 'model.sav'
+pickle.dump(model,open(filename,'wb'))
 
+loaded_model = pickle.load(open(filename,'rb'))
 test = dt.date(2020,10,30).toordinal()
-print(model.predict(test))
+print(loaded_model.predict(test))
