@@ -1,8 +1,0 @@
-# Created by .ignore support plugin (hsz.mobi)
-
-# Compiled files
-*.tfstate
-*.tfstate.backup
-
-# Module directory
-.terraform/
